@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>From</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+   integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body class="bg-dark">
+
+
+    <center style="margin-top: 100px;">
+        <section id="cover" class="min-vh-100 mt-5">
+            <%if(!data){%>
+            <div id="cover-caption">
+                <div class="container">
+                    <div class="row text-white">
+                        <div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto text-center form p-4">
+                            <h1 class="display-4 py-2 text-truncate">Add New Student</h1>
+                            <div class="px-2">
+                                <form action="/form" class="justify-content-center " method="POST">
+                                    <div class="form-group">
+                                        <label class="sr-only">Name</label>
+                                        <input type="text" class="form-control" placeholder="Name" name="name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="sr-only">Phone</label>
+                                        <input type="text" class="form-control" placeholder="Phone" name="phone">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="sr-only">Email</label>
+                                        <input type="text" class="form-control" placeholder="Email" name="email">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary btn-lg">Push to Database</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <%}else{%>
+                    <h3>Data inserted successfuly. <%=data.name%></h3>
+                    <button class="btn text-success"><a href="/form">Back</a></button>
+                <%}%>
+            </div>
+        </section>
+    </center>
+    
+</body>
+</html>
